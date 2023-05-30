@@ -1,9 +1,9 @@
-FROM centos:7
+FROM rockylinux:8
 
 RUN yum install -y openssh-server which
 
 # These are common dependencies so installing them here makes builds faster
-RUN yum install -y autoconf automake createrepo rsync gcc make rpmdevtools rpm-libs yum-utils rpm-sign
+RUN yum install -y autoconf automake createrepo rsync gcc make rpmdevtools rpm-libs yum-utils rpm-sign passwd
 
 RUN yes centos | passwd root
 
